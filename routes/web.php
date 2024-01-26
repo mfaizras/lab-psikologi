@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('register')->group(function(){
+    Route::get('/',[RegistrationController::class,'index']);
+    Route::post('/',[RegistrationController::class,'store'])->name('registrationProcess');
+});
+
+Route::prefix('admin')->group(function(){
+    Route::get('/login',[AdminController::class,'login'])->name('login');
+    Route::post('/login',[AdminController::class,'authenticate'])->name('loginAction');
+    Route::middleware('auth')->group(function (){
+        Route::get('/',[AdminController::class,'index']);
+    });
 });
