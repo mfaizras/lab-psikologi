@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Location;
+use App\Models\Major;
+use App\Models\Position;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -26,6 +29,32 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin')
+        ]);
+
+        Location::create([
+            'location_name' => 'Depok',
+            'status' => 1
+        ]
+        );
+
+        Location::create([
+            'location_name' => 'Kalimalang',
+            'status' => 1
+        ]);
+
+        Major::create([
+            'major_name' => 'Informatika',
+            'status' => 1
+        ]);
+
+        Major::create([
+            'major_name' => 'Sistem Informasi',
+            'status' => 1
+        ]);
+
+        Position::create([
+            'position_name' => 'Programmer',
+            'status' => 1
         ]);
     }
 }

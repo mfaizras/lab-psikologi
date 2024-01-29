@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main_section')
-    <div class="container px-4 mt-4 mb-4 p-3 bg-white rounded-lg">
+    <div class="container w-11/12 px-4 mt-4 mb-4 p-3 bg-white rounded-lg">
         <h1 class="text-center text-3xl font-bold uppercase mb-5">Form Pendaftaran</h1>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -31,12 +31,27 @@
             <div class="mb-3">
                 <label for="inputNama" class="form-label text-slate-700 font-medium text-sm">Jurusan</label>
 
-                    <input type="text" class="form-control" id="inputNama" name="major" value="{{old('major')}}" placeholder="Masukkan Jurusan anda">
+                @php
+                $majors = App\Models\Major::active()->get();
+            @endphp
+                <select name="major" id="" class="form-control">
+                    <option value="">Pilih Jurusan Anda</option>
+                    @foreach ($majors as $major)
+                        <option value="{{$major->major_name}}" {{old('major') == $major->major_name ? 'selected':""}}>{{$major->major_name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label for="inputNama" class="form-label text-slate-700 font-medium text-sm">Lokasi Kampus</label>
-
-                    <input type="text" class="form-control" id="inputNama" name="location" value="{{old('location')}}" placeholder="Masukkan Lokasi Kampus anda">
+                @php
+                    $locations = App\Models\Location::active()->get();
+                @endphp
+                    <select name="location" id="" class="form-control">
+                        <option value="">Pilih Lokasi Kampus Anda</option>
+                        @foreach ($locations as $location)
+                            <option value="{{$location->location_name}}" {{old('location') == $location->location_name ? 'selected':""}}>{{$location->location_name}}</option>
+                        @endforeach
+                    </select>
             </div>
             <div class="mb-3 row">
                 <div class="col">
@@ -58,7 +73,7 @@
             </div>
             <div class="mb-3">
                 <label for="inputNama" class="form-label text-slate-700 font-medium text-sm">Alamat</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address" value="{{old('address')}}" placeholder="Masukkan Alamat Anda"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address" value="{{old('address')}}" placeholder="Masukkan Alamat Anda">{{old('address')}}</textarea>
             </div>
             <div class="mb-3 row">
                 <div class="col">
@@ -72,7 +87,15 @@
             </div>
             <div class="mb-3">
                 <label for="inputNama" class="form-label text-slate-700 font-medium text-sm">Posisi</label>
-                <input type="text" class="form-control" id="inputNama" name="position" value="{{old('position')}}" placeholder="Masukkan Posisi yang anda inginkan">
+                @php
+                $positions = App\Models\Position::active()->get();
+            @endphp
+                <select name="position" id="" class="form-control">
+                    <option value="">Pilih Salah satu posisi yang diinginkan</option>
+                    @foreach ($positions as $position)
+                        <option value="{{$position->position_name}}" {{old('position') == $position->position_name ? 'selected':""}}>{{$position->position_name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label for="inputNama" class="form-label text-slate-700 font-medium text-sm">IPK Terakhir</label>

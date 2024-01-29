@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('identity_path')->nullable();
             $table->string('score_path')->nullable();
             $table->string('certificate_path')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
