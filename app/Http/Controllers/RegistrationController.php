@@ -73,7 +73,9 @@ class RegistrationController extends Controller
         $validatedData['student_card_path'] = $request->file('student_card_path')->storeAs($fileName,$fileName.'-KTM.'.$request->file('student_card_path')->extension(),$disk);
         $validatedData['identity_path'] = $request->file('identity_path')->storeAs($fileName,$fileName.'-KTP.'.$request->file('identity_path')->extension(),$disk);
         $validatedData['score_path'] = $request->file('score_path')->storeAs($fileName,$fileName.'-Rangkuman Nilai.'.$request->file('score_path')->extension(),$disk);
-        $validatedData['certificate_path'] = $request->file('certificate_path')->storeAs($fileName,$fileName.'-Sertifikat.'.$request->file('certificate_path')->extension(),$disk);
+        if($request->hasFile('certificate_path')){
+            $validatedData['certificate_path'] = $request->file('certificate_path')->storeAs($fileName,$fileName.'-Sertifikat.'.$request->file('certificate_path')->extension(),$disk);
+        }
 
         $registerProcess = Registration::create($validatedData);
 
