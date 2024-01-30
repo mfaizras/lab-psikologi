@@ -34,7 +34,7 @@ class RegistrationController extends Controller
             'student_card_path' => 'required|file|mimes:pdf|extensions:pdf',
             'identity_path' => 'required|file|mimes:pdf|extensions:pdf',
             'score_path' => 'required|file|mimes:pdf|extensions:pdf',
-            'certificate_path' => 'required|file|mimes:pdf|extensions:pdf',
+            'certificate_path' => 'file|mimes:pdf|extensions:pdf',
         ],$messages = [
             '*.required' => 'Input :attribute Harus Diisi',
             '*.unique' => ':attribute Sudah Didaftarkan Sebelumnya',

@@ -111,6 +111,8 @@ class AdminRegisterController extends Controller
      */
     public function destroy(Registration $registration)
     {
+        $directory = $registration->npm.'-'.$registration->name;
+        Storage::deleteDirectory($directory);
         $registration->delete();
         return redirect()->route('participantList');
     }

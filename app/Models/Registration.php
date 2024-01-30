@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Registration extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
     protected $dates = ['deleted_at'];
     protected $guarded = ['id'];
 }
