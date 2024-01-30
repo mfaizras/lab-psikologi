@@ -34,5 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{ asset('build/assets/app-DwH8-8Eg.css') }}" />
+        <link rel="stylesheet" href="{{ asset('build/assets/app-V4zzhV-c.js') }}" />
+
+        {{-- @vite('resources/css/app.css') --}}
 </head>
