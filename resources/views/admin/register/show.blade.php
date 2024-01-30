@@ -86,7 +86,9 @@
                 <a href="{{Illuminate\Support\Facades\Storage::url($data->student_card_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download KTM</a>
                 <a href="{{Illuminate\Support\Facades\Storage::url($data->identity_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download KTP</a>
                 <a href="{{Illuminate\Support\Facades\Storage::url($data->score_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download Rangkuman Nilai</a>
+                @if (!empty($data->certificate_path))
                 <a href="{{Illuminate\Support\Facades\Storage::url($data->certificate_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download Sertifikat</a>
+                @endif
             </div>
             {{-- {{ Illuminate\Support\Facades\Storage::download($data->cv_path)}} --}}
         </div>
