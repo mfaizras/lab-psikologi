@@ -6,7 +6,22 @@ export default {
         "./resources/**/*.vue",
       ],
   theme: {
-    extend: {},
+    extend: {
+        colors:{
+            landing:{
+                bg: '#fffffe',
+                bgSecondary: '#d8eefe',
+                headline: '#094067',
+                paragraph: '#5f6c7b',
+                paragraph2: '#d8eefe',
+                button: '#3da9fc',
+                highlight: '#ef4565'
+            }
+        },
+        fontFamily:{
+            'sans': ['Poppins'],
+        }
+    },
   },
   plugins: [],
 }

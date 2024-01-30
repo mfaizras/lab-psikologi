@@ -20,7 +20,11 @@ use App\Http\Controllers\AdminRegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
+});
+
+Route::get('/landing',function(){
+    return view('landing');
 });
 
 Route::prefix('register')->group(function(){
