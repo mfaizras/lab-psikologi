@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ asset('build/assets/app-DwH8-8Eg.css') }}" />
         <link rel="stylesheet" href="{{ asset('build/assets/app-V4zzhV-c.js') }}" />
 
-        {{-- @vite('resources/css/app.css') --}}
+        @vite('resources/css/app.css')
       </head>
       <body class="bg-gray-200 h-full min-h-screen">
 

@@ -37,5 +37,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="{{ asset('build/assets/app-DwH8-8Eg.css') }}" />
         <link rel="stylesheet" href="{{ asset('build/assets/app-V4zzhV-c.js') }}" />
 
-        {{-- @vite('resources/css/app.css') --}}
+        @vite('resources/css/app.css')
 </head>
