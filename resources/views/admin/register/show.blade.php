@@ -80,14 +80,14 @@
             </table>
             <hr class="mb-3">
             <div class="grid md:grid-cols-3 grid-cols-1 auto-cols-auto gap-4">
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->cv_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download CV</a>
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->krs_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download KRS</a>
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->photo_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download Foto</a>
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->student_card_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download KTM</a>
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->identity_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download KTP</a>
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->score_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download Rangkuman Nilai</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->cv_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download CV</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->krs_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download KRS</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->photo_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download Foto</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->student_card_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download KTM</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->identity_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download KTP</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->score_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download Rangkuman Nilai</a>
                 @if (!empty($data->certificate_path))
-                <a href="{{Illuminate\Support\Facades\Storage::url($data->certificate_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank" download>Download Sertifikat</a>
+                <a href="{{Illuminate\Support\Facades\Storage::url($data->certificate_path)}}" class="bg-indigo-700 p-2 text-white font-medium w-full rounded-full text-center" target="_blank">Download Sertifikat</a>
                 @endif
             </div>
             {{-- {{ Illuminate\Support\Facades\Storage::download($data->cv_path)}} --}}
